@@ -224,10 +224,6 @@
   .off-canvas-sidebar[data-color="white"] .nav li:hover:not(.active) > a,
   .off-canvas-sidebar[data-color="white"] .nav li:focus:not(.active) > a {
     opacity: 1; }
-  .sidebar[data-color="white"] .logo .simple-text,
-  .off-canvas-sidebar[data-color="white"] .logo .simple-text {
-    /* color: #66615B;  */
-  }
   .sidebar[data-color="white"] .logo:after,
   .off-canvas-sidebar[data-color="white"] .logo:after {
     background-color: #66615B;
