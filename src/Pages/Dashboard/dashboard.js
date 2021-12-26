@@ -1,11 +1,11 @@
 import React from "react";
-// import { Chart } from "chart.js";
+// import { Bar, Line } from 'react-chartjs-2'
 import './style.css'
 
 const Dashboard = ()=>{
     return(
-        <div>
-            <canvas id="myChart"></canvas>
+        <div className="dashboard">
+            <h1>Dashboard</h1>
         </div>
     )
 }
