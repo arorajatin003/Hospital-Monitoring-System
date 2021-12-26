@@ -2,6 +2,7 @@ import React, { useState,useContext } from "react";
 import { Context } from "../../Store";
 import './nav.css'
 const Navbar = ()=>{
+  const [userID, setUserID] = useContext(Context);
 return(
 <div className="nav">
 <nav className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -28,6 +29,7 @@ return(
                 <span className="navbar-toggler-bar navbar-kebab"></span>
                 <span className="navbar-toggler-bar navbar-kebab"></span>
               </button>
+              </form>
               <div className="collapse navbar-collapse justify-content-end" id="navigation">
                 <div className="dropdown">
                   <div className="dropdown_menu">
@@ -35,7 +37,7 @@ return(
                   </div>
                 </div>
               </div>
-              </form>
+              
             </div>
             </div>
           </nav>
