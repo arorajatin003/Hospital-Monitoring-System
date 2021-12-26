@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect, useContext } from 'react'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { validateUser } from '../../database/hooks';
 import './style.css'
+// import  useUserID  from './UserId';
+import { Context } from '../../Store';
 const SignIn=()=> {
     const [userId,setUserId] = useState("");
     const [password,setPassword] = useState("");
-    const signIn = ()=>{
-        console.log(userId," ",password);
-        setPassword("");
-        setUserId("");
-    }
+    const [validUserID,setValidUserID] = useContext(Context);
+    const history = useHistory();
+    const signIn =async ()=>{
+        await validateUser(userId,password,setValidUserID);
+    }  
+    //console.log(USER_ID);
     return (
         <div className='signIn'>
             <div className='form-signin'> 
@@ -35,6 +40,9 @@ const SignIn=()=> {
                     <label for="floatingPassword">Password</label>
                 </div>
                 <button className="w-100 btn btn-lg btn-primary" onClick={signIn}>Sign in</button>
+                {
+                    validUserID && history.push("/")
+                }
             </div>
         </div>
     )

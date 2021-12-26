@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
+import { addUser}  from '../../database/hooks';
+import { useHistory } from 'react-router-dom';
+// import firebase from 'firebase'
 import './style.css'
 const SignUp=()=> {
     const [userId,setUserId] = useState("");
     const [password,setPassword] = useState("");
     const [conpassword,confirmPassword] = useState("");
-    const SignUp = ()=>{
-        console.log(userId," ",password);
-        setPassword("");
-        setUserId("");
+    const history = useHistory();
+    const SignUp = async ()=>{
         if(password === conpassword){
-            confirmPassword("");
+            console.log(userId," ",password);     
+            await addUser(userId,password);
+            history.push("/signin");
         }
     }
     return (
@@ -40,7 +43,7 @@ const SignUp=()=> {
                 </div>
                 <div className="form-floating">
                     <input 
-                        onChange={e=>setPassword(e.target.value)}
+                        onChange={e=>confirmPassword(e.target.value)}
                         type="password" 
                         className="form-control" 
                         id="floatingPassword" 

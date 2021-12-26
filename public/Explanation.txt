@@ -1,0 +1,10 @@
+hooks.js 
+It is present in src/database/hooks.js.
+It is us to write database functions.
+
+
+Store.js
+It is present in src folder
+It is use to check weather user is login or not. If user login state value will be USER_ID otherwise empty string.
+To use it ---> const [ID,setID] = useContext(Context), import {useContext} from 'react' and import {Context} from 'Store'
+
