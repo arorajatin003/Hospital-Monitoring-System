@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+// import Navbar from '../../Components/Header/navbar';
+// import Sidebar from '../../Components/Header/sidebar';
 import { addUser}  from '../../database/hooks';
 import { useHistory } from 'react-router-dom';
 // import firebase from 'firebase'
@@ -17,6 +19,8 @@ const SignUp=()=> {
     }
     return (
         <div className='signIn'>
+            {/* <Sidebar />
+            <Navbar /> */}
             <div className='form-signin'> 
                 <h1 className="h3 mb-3 fw-normal">Please sign Up</h1>
                 <div className="form-floating">

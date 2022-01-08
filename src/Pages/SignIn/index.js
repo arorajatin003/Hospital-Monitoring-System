@@ -1,3 +1,6 @@
+// import React, { useState } from 'react'
+// import Navbar from '../../Components/Header/navbar';
+// import Sidebar from '../../Components/SideBar/sidebar';
 import React, { useState,useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { validateUser } from '../../database/hooks';
@@ -15,6 +18,8 @@ const SignIn=()=> {
     //console.log(USER_ID);
     return (
         <div className='signIn'>
+            {/* <Sidebar />
+            <Navbar /> */}
             <div className='form-signin'> 
                 <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
                 <div className="form-floating">
