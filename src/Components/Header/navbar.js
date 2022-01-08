@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState,useContext } from "react";
+import { Context } from "../../Store";
 import './nav.css'
-
 const Navbar = ()=>{
+  const [userID, setUserID] = useContext(Context);
 return(
 <div className="nav">
 <nav className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -23,24 +24,25 @@ return(
                   </div>
                 </div> */}
               </div>
-            </form>
-          </div>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-bar navbar-kebab"></span>
-            <span className="navbar-toggler-bar navbar-kebab"></span>
-            <span className="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-end" id="navigation">
-            <div className="dropdown">
-              <div className="dropdown_menu">
-                <a href="/user" className="navbar-brand" type="button"><i className="fa fa-user" aria-hidden="true"></i> Profile</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-bar navbar-kebab"></span>
+                <span className="navbar-toggler-bar navbar-kebab"></span>
+                <span className="navbar-toggler-bar navbar-kebab"></span>
+              </button>
+              </form>
+              <div className="collapse navbar-collapse justify-content-end" id="navigation">
+                <div className="dropdown">
+                  <div className="dropdown_menu">
+                    <a href={`/user/${userID}`} className="navbar-brand" type="button"><i className="fa fa-user" aria-hidden="true"></i> Profile</a>
+                  </div>
+                </div>
               </div>
+              
             </div>
-          </div>
-        </div>
-      </nav>
-</div>
-)
+            </div>
+          </nav>
+    </div>
+    )
 }
 
 export default Navbar
