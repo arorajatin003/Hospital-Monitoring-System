@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Navbar from '../../Components/Header/navbar';
+import Sidebar from '../../Components/Header/sidebar';
 import './style.css'
 const SignIn=()=> {
     const [userId,setUserId] = useState("");
@@ -10,6 +12,8 @@ const SignIn=()=> {
     }
     return (
         <div className='signIn'>
+            <Sidebar />
+            <Navbar />
             <div className='form-signin'> 
                 <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
                 <div className="form-floating">
